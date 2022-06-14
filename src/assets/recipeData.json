@@ -1,0 +1,34 @@
+[
+  {
+    "id": 0,
+    "title": "Dummy Recipe with id 0",
+    "ingredients": [
+      { "id": 0, "name": "rice" },
+      { "id": 1, "name": "potatoes" }
+    ],
+    "categories": [
+      { "id": 0, "name": "vegan" },
+      { "id": 1, "name": "hidrates" }
+    ],
+    "difficulty": 0,
+    "serving": 2,
+    "cookingTime": 30,
+    "preparation": "ID 0 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id": 1,
+    "title": "Dummy Recipe with id 1",
+    "ingredients": [
+      { "id": 2, "name": "beans" },
+      { "id": 3, "name": "beef" }
+    ],
+    "categories": [
+      { "id": 2, "name": "beef" },
+      { "id": 3, "name": "protein" }
+    ],
+    "difficulty": 1,
+    "serving": 4,
+    "cookingTime": 90,
+    "preparation": "ID 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  }
+]

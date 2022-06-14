@@ -1,3 +1,4 @@
+<!--
 <form 
   *ngIf="capabilityForm"
   [formGroup]="capabilityForm">
@@ -12,4 +13,23 @@
         </div>
       </div>
     </div>
+</form>
+ -->
+<form *ngIf="recipeForm" [formGroup]="recipeForm">
+  <h1>{{ recipeForm.value.title }}</h1>
+  <br />
+  <br />
+  <br />
+  <div formArrayName="ingredients">
+      <div
+      *ngFor="
+        let ingredient of recipeForm.controls['ingredients'].controls;
+        let i = index
+      "
+    >
+      <div [formGroupName]="i">
+        <input type="text" formControlName="name" />
+      </div>
+    </div>
+  </div>
 </form>
