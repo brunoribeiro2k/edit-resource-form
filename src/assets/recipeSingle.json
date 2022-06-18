@@ -1,0 +1,16 @@
+{
+  "id": 1,
+  "title": "Dummy Recipe with id 1",
+  "ingredients": [
+    { "id": 2, "name": "beans" },
+    { "id": 3, "name": "beef" }
+  ],
+  "categories": [
+    { "id": 2, "name": "beef" },
+    { "id": 3, "name": "protein" }
+  ],
+  "difficulty": 1,
+  "serving": 4,
+  "cookingTime": 90,
+  "preparation": "ID 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+}

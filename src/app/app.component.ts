@@ -15,20 +15,12 @@ export class AppComponent {
 
   ngOnInit() {
     // this.loadSkillData('/assets/data.json');
-    this.loadRecipeData('/assets/recipeData.json', 0);
+    this.loadRecipeFromSingleFile('/assets/recipeSingle.json');
   }
 
-  private loadRecipeData(path: string, id: number) {
-    this.http.get(path).subscribe((data: any[]) => {
-      this.recipeForm = this.generateRecipeFormGroup(data[id]);
-      console.log('data[id]');
-      console.log(data[id]);
-      console.log('this.recipeForm');
-      console.log(this.recipeForm);
-    });
-  }
+  private formToRecipe(recipeForm: FormGroup) {}
 
-  private generateRecipeFormGroup(recipe) {
+  private recipeToForm(recipe) {
     return this.fb.group({
       title: recipe.title,
       difficulty: recipe.difficulty,
@@ -39,10 +31,28 @@ export class AppComponent {
         recipe.ingredients.map((i) => this.fb.group({ name: i.name }))
       ),
       categories: this.fb.array(
-        recipe.categories.map((c) => {
-          this.fb.group({ name: c.name });
-        })
+        recipe.categories.map((c) => this.fb.group({ name: c.name }))
       ),
+    });
+  }
+
+  private loadRecipeFromSingleFile(path: string) {
+    this.http.get(path).subscribe((data: any) => {
+      this.recipeForm = this.recipeToForm(data);
+      console.log('data');
+      console.log(data);
+      console.log('this.recipeForm');
+      console.log(this.recipeForm);
+    });
+  }
+
+  private loadRecipeFromListFile(path: string, id: number) {
+    this.http.get(path).subscribe((data: any[]) => {
+      this.recipeForm = this.recipeToForm(data[id]);
+      console.log('data[id]');
+      console.log(data[id]);
+      console.log('this.recipeForm');
+      console.log(this.recipeForm);
     });
   }
 
